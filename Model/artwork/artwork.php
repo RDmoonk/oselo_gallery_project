@@ -8,11 +8,11 @@ class Artwork {
     public function __construct($pdo){
         $this->pdo = $pdo;
     }
-    // ça sert à quoi
+    // is needed for ...
 
-    public function allArtworks(){
-        $stmt = $this->pdo->query("SELECT * FROM artworks");
+    public function getAllArtworks(){
+        $stmt = $this->pdo->query("SELECT * FROM artwork");
         return $stmt->fetchAll();
-        // stmt sert à 
+        // stmt is needed for ..., no query pls
     }
 }

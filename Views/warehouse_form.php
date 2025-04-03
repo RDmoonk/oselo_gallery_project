@@ -1,11 +1,13 @@
 <?php 
 
+require_once __DIR__ . '/../Manager/config/database.php';
 require_once __DIR__ . '/../Model/artwork/artwork.php';
 require_once __DIR__ . '/../Model/warehouse/warehouse.php';
 
 $artworkModel = new Artwork($pdo);
-$wrahouseModel = new Warehouse($pdo);
+$warehouseModel = new Warehouse($pdo);
 
+// Récupération des données
 $artworks = $artworkModel->getAllArtworks();
 $warehouses = $warehouseModel->getAllWarehouses();
 ?>
