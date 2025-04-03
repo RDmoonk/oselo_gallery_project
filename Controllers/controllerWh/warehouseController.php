@@ -4,20 +4,22 @@ require_once __DIR__ . '/../../Model/warehouse/warehouse.php';
 
 $warehouse = new Warehouse($pdo);
 
-if ($_SERVER["REQUEST_METHOD"] === "POST"){
-    $id_artwork = $_POST['id_artwork'];
-    //$_POST will pass data to the on going script
-    $id_warehouse = $_POST['id_warehouse'];
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    if (isset($_POST['id_artwork']) && isset($_POST['id_warehouse'])) {
+        $id_artwork = $_POST['id_artwork'];
+        $id_warehouse = $_POST['id_warehouse'];
 
-    if($warehouse->addArtworkToWarehouse($id_artwork, $id_warehouse)) {
-        header("Location: success.php");
-        exit;
-        //will redirect to the file
-        
+        if ($warehouse->addArtworkToWarehouse($id_artwork, $id_warehouse)) {
+            header("Location:  ../../Views/index.php?sucess=1");
+            //  ../../views/index.php?success=1
+            exit;
+        } else {
+            header("Location: ../../Views/index.php?error=1");
+            exit;
+        }
     } else {
-        echo "Error during the adding.";
-        // if possible, it would be better to make a pop up for the error
+        echo "Error : One of the zone of the form is missing.";
     }
-    // this if else will take add a new warehouse
-    
+} else {
+    echo "Access Denied.";
 }
