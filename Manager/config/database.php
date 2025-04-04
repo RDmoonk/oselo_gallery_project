@@ -11,6 +11,6 @@ try {
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
     ]);
 } catch (PDOException $e){
-    die("Connection erro : " . $e->getMessage());
+    die("Connection error : " . $e->getMessage());
 }
 
