@@ -8,13 +8,14 @@
 
 body {
     background-color: #f8f9fa;
-    padding: 20px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    height: 100vh;
+    padding: 20px;
 }
 
-/* 📦 Conteneur principal */
+/* 📦 Conteneur */
 .container {
     width: 100%;
     max-width: 400px;
@@ -22,13 +23,6 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* 🏷️ Titres */
-h2, h3 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 15px;
 }
 
 /* 📝 Formulaire */
@@ -43,20 +37,18 @@ label {
     font-weight: bold;
 }
 
-select, button {
+input, button {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     border-radius: 5px;
     border: 1px solid #ddd;
     font-size: 16px;
 }
 
-select {
+input {
     background-color: #fff;
-    cursor: pointer;
 }
 
-/* 🎨 Bouton */
 button {
     background-color: #4E598C;
     color: white;
@@ -71,22 +63,7 @@ button:hover {
     background-color: #353d61;
 }
 
-/* 📜 Liste des entrepôts */
-ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 15px;
-}
-
-li {
-    background: #e9ecef;
-    padding: 10px;
-    border-radius: 5px;
-    margin: 5px 0;
-    text-align: center;
-}
-
-/* 📱 Responsive - TABLETTE & PC */
+/* 📱 Responsive Design */
 @media (min-width: 600px) {
     .container {
         max-width: 500px;

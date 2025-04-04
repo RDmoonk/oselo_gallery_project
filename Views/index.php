@@ -10,11 +10,12 @@ $warehouses = $warehouseModel->getAllWarehouses();
 ?>
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion des Artworks</title>
+    <title>Oselo Gallery</title>
+    <link rel="stylesheet" href="assets/style.css">
     <style>
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 </style>
@@ -37,16 +38,16 @@ $warehouses = $warehouseModel->getAllWarehouses();
         <label for="id_artwork">Choose an artwork :</label>
         <select name="id_artwork" id="id_artwork" required>
             <?php foreach ($artworks as $artwork): ?>
-                <option value="<?= $artwork['id_artwork']; ?>"><?= htmlspecialchars($artwork['artwork_name']); ?></option>
+                <option value="<?= $artwork['id_artwork']; ?>"><?= htmlspecialchars($artwork['artwork_title']); ?></option>
             <?php endforeach; ?>
         </select>
 
         <label for="id_warehouse">Choose a Warehouse :</label>
         <select name="id_warehouse" id="id_warehouse" required>
-            <?php foreach ($warehouses as $warehouse): ?>
-                <option value="<?= $warehouse['id_warehouse']; ?>"><?= htmlspecialchars($artwork['artwork_name'] ?? "Nom inconnu");; ?></option>
-            <?php endforeach; ?>
-        </select>
+        <?php foreach ($warehouses as $warehouse): ?>
+            <option value="<?= $warehouse['id_warehouse']; ?>"><?= htmlspecialchars($warehouse['warehouse_name']); ?></option>
+        <?php endforeach; ?>
+    </select>
 
         <button type="submit">Add</button>
     </form>
@@ -54,7 +55,23 @@ $warehouses = $warehouseModel->getAllWarehouses();
     <h3>Warehouses List</h3>
     <ul>
         <?php foreach ($warehouses as $warehouse): ?>
-            <li><?= htmlspecialchars($artwork['artwork_name'] ?? "Nom inconnu");; ?></li>
+            <table>
+                <tr>
+                    <th>Warehouse</th>
+                    <th>Title</th>
+                    <th>Artist</th>
+                    <th>Year</th>
+                    <th>Dimension</th>
+                </tr>
+                <tr>
+                <td><?= htmlspecialchars($warehouse['warehouse_name'] ?? "Nom inconnu"); ?></td>
+                <td><?= htmlspecialchars($artwork_title['artwork_title'] ?? "Nom inconnu"); ?></td>
+                <td><?= htmlspecialchars($artist_name['artist_name'] ?? "Nom inconnu"); ?></td>
+                <td><?= htmlspecialchars($production_year['production_year'] ?? "Nom inconnu"); ?></td>
+                <td><?= htmlspecialchars($dimension['dimension'] ?? "Nom inconnu"); ?></td>
+                </tr>
+                
+            </table>
         <?php endforeach; ?>
     </ul>
 </body>

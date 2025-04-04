@@ -17,18 +17,18 @@ $warehouses = $warehouseModel->getAllWarehouses();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oselo Gallery</title>
+    <title>Warehouse Form</title>
 </head>
 <body>
 <form action="../controllers/controllerWh/warehouseController.php" method="post">
     <label for="id_artwork">Choose an artwork :</label>
     <select name="id_artwork" id="id_artwork" required>
         <?php foreach ($artworks as $artwork): ?>
-            <option value="<?= $artwork['id_artwork']; ?>"><?= htmlspecialchars($artwork['artwork_name']); ?></option>
+            <option value="<?= $artwork['id_artwork']; ?>"><?= htmlspecialchars($artwork['artwork_title']); ?></option>
         <?php endforeach; ?>
     </select>
 
-    <label for="id_warehouse">Chooser a warehouse :</label>
+    <label for="id_warehouse">Choose a warehouse :</label>
     <select name="id_warehouse" id="id_warehouse" required>
         <?php foreach ($warehouses as $warehouse): ?>
             <option value="<?= $warehouse['id_warehouse']; ?>"><?= htmlspecialchars($warehouse['warehouse_name']); ?></option>
