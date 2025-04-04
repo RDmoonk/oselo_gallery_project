@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add a warehouse</title>
-    <link rel="stylesheet" href="assets/styles.css"> <!-- Lien vers le CSS -->
+    <link rel="stylesheet" href="assets/warehouseStyle.css">
 </head>
 <body>
     <div class="container">

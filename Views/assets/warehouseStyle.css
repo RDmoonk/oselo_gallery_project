@@ -1,77 +1,125 @@
-/* 🌍 Style global */
-* {
+/* Importation des polices */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Mise en place de la couleur de fond et de la police */
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #FFFFFF;
+    color: #4E598C;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
-body {
-    background-color: #f8f9fa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 20px;
-}
-
-/* 📦 Conteneur */
+/* Conteneur du formulaire */
 .container {
-    width: 100%;
-    max-width: 400px;
-    background: white;
+    max-width: 600px;
+    margin: 0 auto;
     padding: 20px;
+    background-color: #F9C784;
     border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* 📝 Formulaire */
+/* Titre */
+h2 {
+    color: #4E598C;
+    text-align: center;
+}
+
+/* Gestion des messages de succès et d'erreur */
+p {
+    text-align: center;
+    font-weight: bold;
+}
+
+p[style="color:green;"] {
+    color: green;
+}
+
+p[style="color:red;"] {
+    color: red;
+}
+
+/* Formulaire */
 form {
     display: flex;
     flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
 }
 
 label {
     font-size: 16px;
-    margin: 10px 0 5px;
     font-weight: bold;
+    color: #4E598C;
 }
 
-input, button {
-    width: 100%;
+input[type="text"] {
     padding: 10px;
+    font-size: 14px;
+    border: 1px solid #4E598C;
     border-radius: 5px;
-    border: 1px solid #ddd;
-    font-size: 16px;
-}
-
-input {
-    background-color: #fff;
+    background-color: #FFFFFF;
+    color: #4E598C;
 }
 
 button {
     background-color: #4E598C;
     color: white;
-    font-weight: bold;
+    padding: 12px 18px;
+    font-size: 16px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-    margin-top: 15px;
-    transition: 0.3s ease-in-out;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #353d61;
+    background-color: #3b4873;
 }
 
-/* 📱 Responsive Design */
-@media (min-width: 600px) {
+button:active {
+    background-color: #2f3d59;
+}
+
+/* Responsivité pour les écrans plus petits */
+@media (max-width: 768px) {
     .container {
-        max-width: 500px;
+        padding: 15px;
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    input[type="text"] {
+        font-size: 12px;
     }
 }
 
-@media (min-width: 1024px) {
+/* Responsivité pour les très petits écrans (mobiles) */
+@media (max-width: 480px) {
     .container {
-        max-width: 600px;
+        width: 95%;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    label, input[type="text"], button {
+        font-size: 14px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
     }
 }

@@ -1,100 +1,104 @@
-/* 🌍 Style global */
-* {
+/* Importation des polices */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Mise en place de la couleur de fond et de la police */
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #FFFFFF;
+    color: #4E598C;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
-body {
-    background-color: #f8f9fa;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* 📦 Conteneur principal */
-.container {
+/* Définition des styles pour le tableau */
+table {
     width: 100%;
-    max-width: 400px;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-family: 'Roboto', sans-serif;
 }
 
-/* 🏷️ Titres */
-h2, h3 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-/* 📝 Formulaire */
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    font-size: 16px;
-    margin: 10px 0 5px;
+/* En-tête du tableau */
+th {
+    background-color: #4E598C;
+    color: white;
+    padding: 12px;
+    text-align: left;
     font-weight: bold;
 }
 
-select, button {
-    width: 100%;
+/* Cellules du tableau */
+td {
+    background-color: #F9C784;
+    color: #4E598C;
     padding: 12px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    font-size: 16px;
+    text-align: left;
 }
 
-select {
-    background-color: #fff;
-    cursor: pointer;
-}
-
-/* 🎨 Bouton */
+/* Styling des boutons */
 button {
     background-color: #4E598C;
     color: white;
-    font-weight: bold;
+    padding: 10px 15px;
     border: none;
     cursor: pointer;
-    margin-top: 15px;
-    transition: 0.3s ease-in-out;
+    border-radius: 5px;
+    font-size: 14px;
 }
 
 button:hover {
-    background-color: #353d61;
+    background-color: #3b4873;
 }
 
-/* 📜 Liste des entrepôts */
-ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 15px;
+button:active {
+    background-color: #2f3d59;
 }
 
-li {
-    background: #e9ecef;
-    padding: 10px;
-    border-radius: 5px;
-    margin: 5px 0;
-    text-align: center;
+/* Style des boutons de suppression */
+button[style="color:red;"] {
+    background-color: #F9C784;
+    color: #D11A2A;
 }
 
-/* 📱 Responsive - TABLETTE & PC */
-@media (min-width: 600px) {
-    .container {
-        max-width: 500px;
+button[style="color:red;"]:hover {
+    background-color: #F4A261;
+}
+
+/* Style pour les formulaires dans le tableau */
+form {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Responsivité pour les écrans plus petits */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 8px 12px;
     }
 }
 
-@media (min-width: 1024px) {
-    .container {
-        max-width: 600px;
+/* Responsivité pour les petits écrans (mobiles) */
+@media (max-width: 480px) {
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
     }
 }

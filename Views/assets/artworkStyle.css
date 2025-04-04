@@ -1,100 +1,125 @@
-/* ===== Reset & Base Styles ===== */
-* {
-    box-sizing: border-box;
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Set background color and font */
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #FFFFFF;
+    color: #4E598C;
     margin: 0;
     padding: 0;
-  }
-  
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    padding: 20px;
-  }
-  
-  .container {
+}
+
+/* Container for the form */
+.container {
     max-width: 600px;
-    margin: auto;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin: 0 auto;
     padding: 20px;
-  }
-  
-  /* ===== Form Styles ===== */
-  form label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: bold;
-  }
-  
-  form input[type="text"],
-  form input[type="number"],
-  form select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 16px;
-    border: 1px solid #ccc;
+    background-color: #F9C784;
     border-radius: 8px;
-    transition: border-color 0.3s ease;
-  }
-  
-  form input:focus,
-  form select:focus {
-    border-color: #007bff;
-    outline: none;
-  }
-  
-  form button {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+h2 {
+    color: #4E598C;
+    text-align: center;
+}
+
+/* Success and error messages */
+p {
+    text-align: center;
+    font-weight: bold;
+}
+
+p[style="color:green;"] {
+    color: green;
+}
+
+p[style="color:red;"] {
+    color: red;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4E598C;
+}
+
+input[type="text"], input[type="date"], select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #4E598C;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    color: #4E598C;
+}
+
+button {
     background-color: #4E598C;
     color: white;
-    border: none;
     padding: 12px 18px;
-    border-radius: 8px;
     font-size: 16px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  form button:hover {
-    background-color: #303758;
-  }
-  
-  /* ===== Table Styles ===== */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 30px;
-  }
-  
-  th, td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-  }
-  
-  td a {
-    color: #dc3545;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  td a:hover {
-    text-decoration: underline;
-  }
-  
-  /* ===== Responsive Design ===== */
-  @media screen and (min-width: 768px) {
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3b4873;
+}
+
+button:active {
+    background-color: #2f3d59;
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
     .container {
-      padding: 30px;
+        padding: 15px;
+        width: 90%;
     }
-  
-    form button {
-      width: auto;
+
+    h2 {
+        font-size: 24px;
     }
-  }
-  
+
+    button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    input[type="text"], input[type="date"], select {
+        font-size: 12px;
+    }
+}
+
+/* Responsiveness for very small screens (mobile) */
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    label, input[type="text"], input[type="date"], select, button {
+        font-size: 14px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+    }
+}
