@@ -34,7 +34,7 @@ $warehouses = $warehouseModel->getAllWarehouses();
         <p style="color:red;">Adding Error.</p>
     <?php endif; ?>
 
-    <form action="../controllers/WarehouseController.php" method="post">
+    <form action="../Controllers/controllerWh/warehouseController.php" method="post">
         <label for="id_artwork">Choose an artwork :</label>
         <select name="id_artwork" id="id_artwork" required>
             <?php foreach ($artworks as $artwork): ?>

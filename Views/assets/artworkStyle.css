@@ -1,77 +1,100 @@
-/* 🌍 Style global */
+/* ===== Reset & Base Styles ===== */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    background-color: #f8f9fa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
     padding: 20px;
-}
-
-/* 📦 Conteneur */
-.container {
-    width: 100%;
-    max-width: 400px;
-    background: white;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* 📝 Formulaire */
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    font-size: 16px;
-    margin: 10px 0 5px;
+  }
+  
+  /* ===== Form Styles ===== */
+  form label {
+    display: block;
+    margin-bottom: 6px;
     font-weight: bold;
-}
-
-input, button {
+  }
+  
+  form input[type="text"],
+  form input[type="number"],
+  form select {
     width: 100%;
     padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    font-size: 16px;
-}
-
-input {
-    background-color: #fff;
-}
-
-button {
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+  }
+  
+  form input:focus,
+  form select:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  form button {
     background-color: #4E598C;
     color: white;
-    font-weight: bold;
     border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 16px;
     cursor: pointer;
-    margin-top: 15px;
-    transition: 0.3s ease-in-out;
-}
-
-button:hover {
-    background-color: #353d61;
-}
-
-/* 📱 Responsive Design */
-@media (min-width: 600px) {
+    transition: background-color 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #303758;
+  }
+  
+  /* ===== Table Styles ===== */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+  }
+  
+  th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  td a {
+    color: #dc3545;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  td a:hover {
+    text-decoration: underline;
+  }
+  
+  /* ===== Responsive Design ===== */
+  @media screen and (min-width: 768px) {
     .container {
-        max-width: 500px;
+      padding: 30px;
     }
-}
-
-@media (min-width: 1024px) {
-    .container {
-        max-width: 600px;
+  
+    form button {
+      width: auto;
     }
-}
+  }
+  

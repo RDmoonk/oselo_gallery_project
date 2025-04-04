@@ -1,36 +1,32 @@
 <?php
-require_once __DIR__ . '/../Manager/config/database.php'; 
-// // Database connection for the warehouse creation
+require_once __DIR__ . '/../Manager/config/database.php';
 
+// fetch all the already existing warehouses
+$warehouses = $pdo->query("SELECT * FROM warehouse")->fetchAll(PDO::FETCH_ASSOC);
 
-$artwork_title = $artist_name = $production_year = $dimension = "";
+$artwork_name = $production_year = $dimension = "";
+$id_warehouse = null;
 $success = $error = "";
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $artwork_title = trim($_POST["artwork_title"] ?? '');
+    $artwork_name = trim($_POST["artwork_title"] ?? '');
     $artist_name = trim($_POST["artist_name"] ?? '');
     $production_year = trim($_POST["production_year"] ?? '');
     $dimension = trim($_POST["dimension"] ?? '');
+    $id_warehouse = $_POST["id_warehouse"] ?? null;
 
-
-    if (!empty($artwork_title) && !empty($production_year) && !empty($dimension)) {
+    if ($artwork_name && $production_year && $dimension) {
         try {
-            
-            $sql = "INSERT INTO artworks (artwork_title, artist_name, production_year, dimension) VALUES (?, ?, ?,?)";
+            $sql = "INSERT INTO artworks (artwork_title, artist_name, production_year, dimension, id_warehouse) VALUES (?, ?, ?, ?, ?)";
             $stmt = $pdo->prepare($sql);
-            //this is the SQL request 
-
-            
-            if ($stmt->execute([$artwork_title,$artist_name ,$production_year, $dimension])) $success = "L'œuvre a été ajoutée avec succès !";
-             else $error = "Error during the artwork adding.";
-
-            // execute the SQL request 
+            $stmt->execute([$artwork_name, $artist_name, $production_year, $dimension, $id_warehouse ?: null]);
+            $success = "Artwork has been added.";
         } catch (PDOException $e) {
             $error = "SQL Error : " . $e->getMessage();
         }
     } else {
-        $error = "Please complete the area.";
+        $error = "All areas are required.";
     }
 }
 ?>
@@ -55,19 +51,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- This code is used for the messages: One for the error message and the other one for the success one -->
 
     <form action="" method="post">
-        <label for="artwork_title">Artwork :</label>
-        <input type="text" name="artwork_title" value="<?= htmlspecialchars($artwork_title); ?>" required>
+    <label>Artwork :</label>
+    <input type="text" name="artwork_title" required><br>
 
-        <label for="artist_name">Artist:</label>
-        <input type="text" name="artist_name" value="<?= htmlspecialchars($artist_name); ?>" required>
+    <label>Artist :</label>
+    <input type="text" name="artist_name" required><br>
 
-        <label for="production_year">Year of production :</label>
-        <input type="date" name="production_year" value="<?= htmlspecialchars($production_year); ?>" required>
+    <label>Years of productions :</label>
+    <input type="date" name="production_year" required><br>
 
-        <label for="dimension">Dimensions :</label>
-        <input type="text" name="dimension" value="<?= htmlspecialchars($dimension); ?>" required>
+    <label>Dimensions :</label>
+    <input type="text" name="dimension" required><br>
 
-        <button type="submit">Add</button>
-    </form>
+    <label>Entrepôt :</label>
+    <select name="id_warehouse">
+        <option value="">Choose a warehouse</option>
+        <?php foreach ($warehouses as $wh): ?>
+            <option value="<?= $wh['id_warehouse'] ?>">
+                <?= htmlspecialchars($wh['warehouse_name']) ?>
+            </option>
+        <?php endforeach; ?>
+    </select><br>
+
+    <button type="submit">Add</button>
+</form>
 </body>
 </html>

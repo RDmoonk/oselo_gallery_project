@@ -1,29 +1,18 @@
+<?php 
 
+require_once __DIR__ . '/../../Manager/config/database.php';
 
-
-<?php
- require_once __DIR__ . '/../../Manager/config/database.php';
-
-class Warehouse {
+class Artwork {
     private $pdo;
 
-    public function __construct($pdo) {
+    public function __construct($pdo){
         $this->pdo = $pdo;
     }
+    // is needed for ...
 
-    public function addArtworkToWarehouse($id_artwork, $id_warehouse) {
-        $stmt = $this->pdo->prepare("INSERT INTO warehouse (id_artwork, id_warehouse) VALUES (:id_artwork, :id_warehouse)");
-        return $stmt->execute([
-            'id_artwork' => $id_artwork,
-            'id_warehouse' => $id_warehouse
-        ]);
-    }
-
-    public function getAllWarehouses() {
-        $stmt = $this->pdo->query("SELECT * FROM warehouse");
+    public function getAllArtworks(){
+        $stmt = $this->pdo->query("SELECT * FROM artworks");
         return $stmt->fetchAll();
+        // stmt is needed for ..., no query pls
     }
 }
-?>
-
-
