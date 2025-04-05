@@ -14,3 +14,5 @@ try {
     die("Connection error : " . $e->getMessage());
 }
 
+// all of this is needed to create a connection beteween the php and the database
+

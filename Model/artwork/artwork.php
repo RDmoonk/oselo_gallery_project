@@ -8,12 +8,12 @@ class Artwork {
     public function __construct($pdo){
         $this->pdo = $pdo;
     }
-    // is needed for ...
+    // this is needed to connect the database to the php class
 
     public function getAllArtworks(){
         $stmt = $this->pdo->query("SELECT * FROM artworks");
         return $stmt->fetchAll();
-        // stmt is needed for ..., no query pls
+        // stmt is needed for executing a request that was prepared
         
     }
     public function deleteArtwork($id) {

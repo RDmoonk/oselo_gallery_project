@@ -2,7 +2,7 @@
 require_once __DIR__ .'/../Manager/config/database.php';
 
 
-// Récupérer la liste des artworks
+//Recovery of the artwork's list
 $sql = "SELECT id_artwork, artwork_name, year_production, dimension FROM artworks";
 $stmt = $pdo->query($sql);
 $artworks = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -14,7 +14,7 @@ $artworks = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des Œuvres</title>
-    <link rel="stylesheet" href="assets/styles.css"> <!-- Ton fichier CSS -->
+    <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
     <h2>Liste des Œuvres</h2>

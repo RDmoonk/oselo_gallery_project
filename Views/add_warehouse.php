@@ -18,15 +18,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // request executation
             if ($stmt->execute([$warehouse_name, $warehouse_address])) {
-                $success = "L'entrepôt a été ajouté avec succès !";
+                $success = "The warehouse has been added !";
             } else {
-                $error = "Erreur lors de l'ajout de l'entrepôt.";
+                $error = "Error during the adding of the warehouse.";
             }
         } catch (PDOException $e) {
-            $error = "Erreur SQL : " . $e->getMessage();
+            $error = "SQL Error : " . $e->getMessage();
         }
     } else {
-        $error = "Veuillez remplir tous les champs.";
+        $error = "Please complete all the areas.";
     }
 }
 ?>

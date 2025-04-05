@@ -1,7 +1,7 @@
-/* Importation des polices */
+/* Lato's import into the css stylesheet */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-/* Mise en place de la couleur de fond et de la police */
+/* putting the Lato font */
 body {
     font-family: 'Lato', sans-serif;
     background-color: #FFFFFF;
@@ -10,7 +10,7 @@ body {
     padding: 0;
 }
 
-/* Définition des styles pour le tableau */
+/* table's styling */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -18,7 +18,7 @@ table {
     font-family: 'Roboto', sans-serif;
 }
 
-/* En-tête du tableau */
+
 th {
     background-color: #4E598C;
     color: white;
@@ -27,7 +27,7 @@ th {
     font-weight: bold;
 }
 
-/* Cellules du tableau */
+
 td {
     background-color: #F9C784;
     color: #4E598C;
@@ -35,7 +35,7 @@ td {
     text-align: left;
 }
 
-/* Styling des boutons */
+
 button {
     background-color: #4E598C;
     color: white;
@@ -54,7 +54,7 @@ button:active {
     background-color: #2f3d59;
 }
 
-/* Style des boutons de suppression */
+
 button[style="color:red;"] {
     background-color: #F9C784;
     color: #D11A2A;
@@ -64,13 +64,13 @@ button[style="color:red;"]:hover {
     background-color: #F4A261;
 }
 
-/* Style pour les formulaires dans le tableau */
+
 form {
     display: inline-block;
     margin-right: 10px;
 }
 
-/* Responsivité pour les écrans plus petits */
+/* Responsive design */
 @media (max-width: 768px) {
     table {
         width: 100%;
@@ -87,7 +87,7 @@ form {
     }
 }
 
-/* Responsivité pour les petits écrans (mobiles) */
+/* Responsive for smaller screen*/
 @media (max-width: 480px) {
     table {
         font-size: 12px;

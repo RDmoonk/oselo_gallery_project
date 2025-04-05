@@ -7,7 +7,7 @@ require_once __DIR__ . '/../Model/warehouse/warehouse.php';
 $artworkModel = new Artwork($pdo);
 $warehouseModel = new Warehouse($pdo);
 
-// Récupération des données
+// data recovery
 $artworks = $artworkModel->getAllArtworks();
 $warehouses = $warehouseModel->getAllWarehouses();
 ?>

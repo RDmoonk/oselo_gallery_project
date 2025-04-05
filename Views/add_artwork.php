@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <label>Dimensions :</label>
     <input type="text" name="dimension" required><br>
 
-    <label>Entrepôt :</label>
+    <label>Warehouse :</label>
     <select name="id_warehouse">
         <option value="">Choose a warehouse</option>
         <?php foreach ($warehouses as $wh): ?>

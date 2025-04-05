@@ -13,7 +13,8 @@ if (isset($_GET['id'])) {
 
     
     try {
-        $artworkModel->deleteArtwork($id_artwork);  // Appel à la méthode de suppression
+        $artworkModel->deleteArtwork($id_artwork);  
+        // call the delete method
         // Redirection avec succès après suppression
         header('Location: ../Views/index.php?deleted=1');
         exit;
